@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/eriky-rayan/%C3%81rea%20de%20trabalho/PWEB/Repositorio/programacao-web/receita1/app/page.js"],"sourcesContent":["export default function Home(){\n\n    return (\n        <html>\n            <body> \n                <div>\n                    <div>Menu principal</div>\n                    <div>\n                        <h1>\n                            Viva Santana!\n                        </h1>\n                    </div>\n                </div>\n            </body> \n        </html>   \n    )\n}"],"names":["Home"],"mappings":";;;;;;AAAe,SAASA;IAEpB,qBACI,8OAAC;kBACG,cAAA,8OAAC;sBACG,cAAA,8OAAC;;kCACG,8OAAC;kCAAI;;;;;;kCACL,8OAAC;kCACG,cAAA,8OAAC;sCAAG;;;;;;;;;;;;;;;;;;;;;;;;;;;AAQ5B"}}]
-}
