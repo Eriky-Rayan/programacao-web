@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/eriky-rayan/%C3%81rea%20de%20trabalho/PWEB/Repositorio/programacao-web/receita2/app/novarota/componentes.js"],"sourcesContent":["export function MariaPrea(){\n   return (\n      <h2>Morreu Maria Preá...</h2>\n   )\n}"],"names":["MariaPrea"],"mappings":";;;;;;AAAO,SAASA;IACb,qBACG,8OAAC;kBAAG;;;;;;AAEV"}}]
-}
