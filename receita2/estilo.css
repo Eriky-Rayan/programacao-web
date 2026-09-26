@@ -19,3 +19,10 @@ a:visited{
 a:hover{
     text-decoration: underline;
 }
+
+img.poeta{
+  width: 150px;       /* Defina a largura que desejar */
+  height: 150px;      /* A altura deve ser igual à largura */
+  border-radius: 50%; /* Faz a mágica de deixar redonda */
+  object-fit: cover;
+}
