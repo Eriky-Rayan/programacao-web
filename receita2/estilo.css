@@ -26,3 +26,8 @@ img.poeta{
   border-radius: 50%; /* Faz a mágica de deixar redonda */
   object-fit: cover;
 }
+
+th{
+  background-color: lightblue;  
+  color: black;
+}
