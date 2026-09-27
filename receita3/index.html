@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-
-<html>   
-
+<html>
    <head>
-
-      <meta charset="UTF-8">      
-
+      <meta charset="UTF-8">
+      <style>
+         #meuAmor {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+         }
+      </style>
    </head>
 
-   
-
    <body>
-
       <div id="acoes">
          <button id="botaoCarregar">Carregando cervejas...</button>
       </div>
-      <div id="meu amor"></div>
-
-   </body>   
-
-   
+      <div id="meuAmor"></div>
+   </body>
 
    <script>
+      let div = document.getElementById("meuAmor")
+      let botao = document.getElementById("botaoCarregar")
+      let visivel = false
 
       function carregarDiv(){
+         div.style.opacity = 0
 
-         let div = document.getElementById("meu amor")
-
-         if (div.innerHTML === "") {
-            div.innerHTML = `<h1>Guinness</h1>`
-         } else {
-            div.innerHTML = ""
-         }
-
+         // Espera a transição de fade out terminar antes de trocar o conteúdo
+         setTimeout(() => {
+            if (!visivel) {
+               div.innerHTML = `<h1>Guinness</h1>`
+               div.style.opacity = 1
+            } else {
+               div.innerHTML = ""
+            }
+            visivel = !visivel
+         }, 500) // mesmo tempo definido na transition (0.5s = 500ms)
       }
 
-      
-
-      let botao = document.getElementById("botaoCarregar")
-
-      botao.addEventListener("click", carregarDiv)                 
-
+      botao.addEventListener("click", carregarDiv)
    </script>
-
 </html>
