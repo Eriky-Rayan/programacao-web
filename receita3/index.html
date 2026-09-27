@@ -27,7 +27,11 @@
 
          let div = document.getElementById("meu amor")
 
-         div.innerHTML = `<h1>Guinness</h1>`
+         if (div.innerHTML === "") {
+            div.innerHTML = `<h1>Guinness</h1>`
+         } else {
+            div.innerHTML = ""
+         }
 
       }
 
