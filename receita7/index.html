@@ -1,64 +1,55 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Bebidas</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
 
-<html>   
+  <body>
+    <h1>🍹 Buscador de Bebidas</h1>
 
-   <head>
+    <div><button id="botaoCarregar">Carregar Cervejas...</button></div>
+    <div id="cervejasDiv"></div>
 
-      <meta charset="UTF-8">      
-
-   </head>
-
-
-   <body>
-
-      <div><button id="botaoCarregar">Carregando Cervejas...</button></div>
-
-      <div id="cervejasDiv"></div>            
-
-   </body>   
-
-   
-
-   <script>
-
-
+    <script>
       let Cervejas = []
 
-      
-
-      //cs é um array de Cervejas
+      // cs é um array de Cervejas
       const carregarDiv = cs => {
+        const div = document.getElementById("cervejasDiv")
 
-         const div = document.getElementById("cervejasDiv")
+        if (!cs || cs.length === 0) {
+          div.innerHTML = `<p class="vazio">Nenhum produto encontrado.</p>`
+          return
+        }
 
-         const itensHtml = cs.map(({title,price,category}) => `<div>${title} -- ${category} -- ${price}</div>` ) 
-
-         div.innerHTML = `${itensHtml.join("\n")}`
-
+        const itensHtml = cs.map(({ title, price, category }) =>
+          `<div>${title} <span class="categoria">${category}</span> <span class="preco">$${price}</span></div>`
+        )
+        div.innerHTML = itensHtml.join("\n")
       }
 
-      
+      async function carregarCervejas() {
+        botao.disabled = true
+        botao.textContent = "Carregando..."
 
-      async function carregarCervejas(){
-        try{
-         let res = await fetch("https://dummyjson.com/products/search?q=drinks")
-         let data = await res.json()
-         Cervejas = data.products  
-         carregarDiv(Cervejas)
-        }catch(err){
-            document.getElementById("cervejasDiv").innerHTML = "Fudeu..."
+        try {
+          let res = await fetch("https://dummyjson.com/products/search?q=drinks")
+          let data = await res.json()
+          Cervejas = data.products
+          carregarDiv(Cervejas)
+        } catch (err) {
+          document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu...</p>`
+        } finally {
+          botao.disabled = false
+          botao.textContent = "Carregar Cervejas..."
         }
       }
 
-      
-
-
       let botao = document.getElementById("botaoCarregar")
-
-      botao.addEventListener("click", () => carregarCervejas() )                 
-
-      
-
-   </script>
-
+      botao.addEventListener("click", () => carregarCervejas())
+    </script>
+  </body>
 </html>
