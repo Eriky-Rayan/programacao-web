@@ -25,8 +25,8 @@
           return
         }
 
-        const itensHtml = cs.map(({ title, price, category }) =>
-          `<div>${title} <span class="categoria">${category}</span> <span class="preco">$${price}</span></div>`
+        const itensHtml = cs.map(({ id, title, price }) =>
+          `<div>${id} <span class="categoria">${title}</span> <span class="preco">$${price}</span></div>`
         )
         div.innerHTML = itensHtml.join("\n")
       }
@@ -34,9 +34,10 @@
       async function carregarCervejas() {
         botao.disabled = true
         botao.textContent = "Carregando..."
-
+        //exercicio_3 mudou de "drinks" para "phones"
+        //-Eriky
         try {
-          let res = await fetch("https://dummyjson.com/products/search?q=drinks")
+          let res = await fetch("https://dummyjson.com/products/search?q=phones")
           let data = await res.json()
           Cervejas = data.products
           carregarDiv(Cervejas)
