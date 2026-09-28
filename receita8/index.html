@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Telefones</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+
+  <body>
+    <h1>🍹 Buscador de Telefones</h1>
+
+    <div><button id="botaoCarregar">Carregando telefones...</button></div>
+    <div id="cervejasDiv"></div>
+  </body>
+
+  <script src="tabela.js"></script>
+  <script>
+    let cervejas = []
+
+    const opcoesTabela = {
+      colunas: ["id", "title", "price"],
+      titulos: { id: "ID", title: "Produto", price: "Preço (R$)" },
+      mensagemVazio: "Nenhum produto encontrado."
+    }
+
+    const carregarDiv = cs => {
+      return cs.map(({ id, title, price }) => ({ id, title, price }))
+    }
+
+    /*
+    async function carregarCervejas() {
+      try {
+        let res = await fetch("https://dummyjson.com/products/search?q=drinks")
+        data = await res.json()
+        cervejas = data.products
+        montarTabela(cervejas, "cervejasDiv", opcoesTabela)
+      } catch (err) {
+        document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu...</p>`
+      }
+    }
+    */
+
+    function carregarCervejas2() {
+      fetch("https://dummyjson.com/products/search?q=phone").then(
+        res => res.json()
+      ).then(
+        json => montarTabela(json.products, "cervejasDiv", opcoesTabela)
+      ).catch(
+        err => document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu... ${err}</p>`
+      )
+      document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fazendo requisição</p>`
+    }
+
+    let botao = document.getElementById("botaoCarregar")
+    botao.addEventListener("click", () => carregarCervejas2())
+  </script>
+</html>
