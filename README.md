@@ -5,12 +5,12 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 
 | Receita | Link |
 |---|---|
-| Receita 1 | [receita1](./receita1) |
-| Receita 2 | [receita2](./receita2) |
-| Receita 3 | [receita3](./receita3) |
-| Receita 4 | [receita4](./receita4) |
-| Receita 5 | [receita5](./receita5) |
-| Receita 6 | [receita6](./receita6) |
+| Receita 1 | [receita1](./receita1/app/) |
+| Receita 2 | [receita2](./receita2/app/) |
+| Receita 3 | [receita3](./receita3/app/) |
+| Receita 4 | [receita4](./receita4/app/) |
+| Receita 5 | [receita5](./receita5/app/) |
+| Receita 6 | [receita6](./receita6/app/) |
 
 ## 🚀 Como Executar o Projeto
 
