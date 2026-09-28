@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>   
+
+   <head>
+
+      <meta charset="UTF-8">      
+
+   </head>
+
+
+   <body>
+
+      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+
+      <div id="cervejasDiv"></div>            
+
+   </body>   
+
+   
+
+   <script>
+
+
+      let cervejas = []
+
+      
+
+      //cs é um array de cervejas
+
+      const carregarDiv = cs => {
+
+         const div = document.getElementById("cervejasDiv")
+
+         const itensHtml = cs.map( ({title,price}) => `<div>${title} -- ${price}</div>` ) 
+
+         div.innerHTML = `${itensHtml.join("\n")}`
+
+      }
+
+      
+
+      async function carregarCervejas(){
+
+         try{
+
+            let res = await fetch("https://dummyjson.com/products/search?q=drinks")
+            data = await res.json()
+            cervejas = data.products
+            carregarDiv(cervejas)
+
+         }catch(err){
+
+            document.getElementById("cervejasDiv").innerHTML = "Fudeu..."
+
+         }
+
+      }
+
+      function carregarCervejas2(){
+
+         fetch("https://dummyjson.com/products/search?q=drinks").then(
+            res => res.json()
+         ).then(
+            json => carregarDiv(json.products)
+         ).catch(
+            err => document.getElementById("cervejasDiv").innerHTML = `Fudeu... ${err}`
+         )
+         document.getElementById("cervejasDiv").innerHTML = `Fazendo requisição`       
+
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+
+      botao.addEventListener("click", () => carregarCervejas2() )                 
+
+      
+
+   </script>
+
+</html>
