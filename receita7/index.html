@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Bebidas</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+
+  <body>
+    <h1>🍹 Buscador de Bebidas</h1>
+
+    <div><button id="botaoCarregar">Carregar Cervejas...</button></div>
+    <div id="cervejasDiv"></div>
+
+    <script src="tabela.js"></script>
+    <script>
+      let Cervejas = []
+
+      async function carregarCervejas() {
+        botao.disabled = true
+        botao.textContent = "Carregando..."
+        //exercicio 3 mudou de "drinks" para "phones"
+        //-Eriky
+        try {
+          let res = await fetch("https://dummyjson.com/products/search?q=phones")
+          let data = await res.json()
+          Cervejas = data.products
+
+          montarTabela(Cervejas, "cervejasDiv", {
+            colunas: ["title", "category", "price"],
+            titulos: { title: "Produto", category: "Categoria", price: "Preço ($)" },
+            mensagemVazio: "Nenhum produto encontrado."
+          })
+        } catch (err) {
+          document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu...</p>`
+        } finally {
+          botao.disabled = false
+          botao.textContent = "Carregar Cervejas..."
+        }
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+      botao.addEventListener("click", () => carregarCervejas())
+    </script>
+  </body>
+</html>
