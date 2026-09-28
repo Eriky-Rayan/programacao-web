@@ -32,7 +32,7 @@
 
          const div = document.getElementById("cervejasDiv")
 
-         const itensHtml = cs.map( ({title,price}) => `<div>${title} -- ${price}</div>` ) 
+         const itensHtml = cs.map( ({title,price,category}) => `<div>${title} -- ${category} -- R$${price}</div>` ) 
 
          div.innerHTML = `${itensHtml.join("\n")}`
 
