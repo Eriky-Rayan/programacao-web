@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <title>Receita-Menu</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+   <h1>Menu</h1>
+
+   <div class="row">
+  <div class="column">
+    <table>
+      <tr>
+        <th>Receitas</th>
+        <th>Link</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td> <a href="./receita1/index.html" target="_blank">Receita1</a> </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td> <a href="./receita2/index.html" target="_blank">Receita2</a> </td>
+      </tr>
+      <tr>
+        <td> 3 </td>
+        <td> <a href="./receita3/index.html" target="_blank">Receita3</a> </td>
+      </tr>
+      <tr>
+        <td> 4 </td>
+        <td> <a href="./receita4/index.html" target="_blank">Receita4</a> </td>
+      </tr>
+      <tr>
+        <td> 5 </td>
+        <td> <a href="./receita5/index.html" target="_blank">Receita5</a> </td>
+      </tr>
+      <tr>
+        <td> 6 </td>
+        <td> <a href="./receita6/index.html" target="_blank">Receita6</a> </td>
+      </tr>
+      <tr>
+        <td> 7 </td>
+        <td> <a href="./receita7/index.html" target="_blank">Receita7</a> </td>
+      </tr>
+      <tr>
+        <td> 8 </td>
+        <td> <a href="./receita8/index.html" target="_blank">Receita8</a> </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+
+</html>
