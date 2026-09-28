@@ -14,16 +14,18 @@
     <div id="cervejasDiv"></div>
   </body>
 
+  <script src="tabela.js"></script>
   <script>
     let cervejas = []
 
-    // cs é um array de cervejas
+    const opcoesTabela = {
+      colunas: ["id", "title", "price"],
+      titulos: { id: "ID", title: "Produto", price: "Preço (R$)" },
+      mensagemVazio: "Nenhum produto encontrado."
+    }
+
     const carregarDiv = cs => {
-      const div = document.getElementById("cervejasDiv")
-      const itensHtml = cs.map(({ id, title, price }) =>
-        `<div>${id} <span class="categoria">${title}</span> <span class="preco">R$${price}</span></div>`
-      )
-      div.innerHTML = `${itensHtml.join("\n")}`
+      return cs.map(({ id, title, price }) => ({ id, title, price }))
     }
 
     /*
@@ -32,17 +34,18 @@
         let res = await fetch("https://dummyjson.com/products/search?q=drinks")
         data = await res.json()
         cervejas = data.products
-        carregarDiv(cervejas)
+        montarTabela(cervejas, "cervejasDiv", opcoesTabela)
       } catch (err) {
         document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu...</p>`
       }
-    }*/
+    }
+    */
 
     function carregarCervejas2() {
-      fetch("https://dummyjson.com/products/search?q=phones").then(
+      fetch("https://dummyjson.com/products/search?q=phone").then(
         res => res.json()
       ).then(
-        json => carregarDiv(json.products)
+        json => montarTabela(json.products, "cervejasDiv", opcoesTabela)
       ).catch(
         err => document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu... ${err}</p>`
       )
