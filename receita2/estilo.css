@@ -1,0 +1,33 @@
+
+p.verso{
+   color: blue;
+}
+
+p.mote{
+   color: red;
+}
+
+a:link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:visited{
+    color: purple
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+img.poeta{
+  width: 150px;       /* Defina a largura que desejar */
+  height: 150px;      /* A altura deve ser igual à largura */
+  border-radius: 50%; /* Faz a mágica de deixar redonda */
+  object-fit: cover;
+}
+
+th{
+  background-color: lightblue;  
+  color: black;
+}
