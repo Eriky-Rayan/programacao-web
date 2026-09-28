@@ -1,81 +1,55 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Bebidas</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
 
-<html>   
+  <body>
+    <h1>🍹 Buscador de Bebidas</h1>
 
-   <head>
+    <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+    <div id="cervejasDiv"></div>
+  </body>
 
-      <meta charset="UTF-8">      
+  <script>
+    let cervejas = []
 
-   </head>
-
-
-   <body>
-
-      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
-
-      <div id="cervejasDiv"></div>            
-
-   </body>   
-
-   
-
-   <script>
-
-
-      let cervejas = []
-
-      
-
-      //cs é um array de cervejas
-
-      const carregarDiv = cs => {
-
-         const div = document.getElementById("cervejasDiv")
-
-         const itensHtml = cs.map( ({title,price,category}) => `<div>${title} -- ${category} -- R$${price}</div>` ) 
-
-         div.innerHTML = `${itensHtml.join("\n")}`
-
+    // cs é um array de cervejas
+    const carregarDiv = cs => {
+      const div = document.getElementById("cervejasDiv")
+      const itensHtml = cs.map(({ title, price, category }) =>
+        `<div>${title} <span class="categoria">${category}</span> <span class="preco">R$${price}</span></div>`
+      )
+      div.innerHTML = `${itensHtml.join("\n")}`
+    }
+    
+    /*
+    async function carregarCervejas() {
+      try {
+        let res = await fetch("https://dummyjson.com/products/search?q=drinks")
+        data = await res.json()
+        cervejas = data.products
+        carregarDiv(cervejas)
+      } catch (err) {
+        document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu...</p>`
       }
+    }*/
 
-      
+    function carregarCervejas2() {
+      fetch("https://dummyjson.com/products/search?q=drinks").then(
+        res => res.json()
+      ).then(
+        json => carregarDiv(json.products)
+      ).catch(
+        err => document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fudeu... ${err}</p>`
+      )
+      document.getElementById("cervejasDiv").innerHTML = `<p class="vazio">Fazendo requisição</p>`
+    }
 
-      async function carregarCervejas(){
-
-         try{
-
-            let res = await fetch("https://dummyjson.com/products/search?q=drinks")
-            data = await res.json()
-            cervejas = data.products
-            carregarDiv(cervejas)
-
-         }catch(err){
-
-            document.getElementById("cervejasDiv").innerHTML = "Fudeu..."
-
-         }
-
-      }
-
-      function carregarCervejas2(){
-
-         fetch("https://dummyjson.com/products/search?q=drinks").then(
-            res => res.json()
-         ).then(
-            json => carregarDiv(json.products)
-         ).catch(
-            err => document.getElementById("cervejasDiv").innerHTML = `Fudeu... ${err}`
-         )
-         document.getElementById("cervejasDiv").innerHTML = `Fazendo requisição`       
-
-      }
-
-      let botao = document.getElementById("botaoCarregar")
-
-      botao.addEventListener("click", () => carregarCervejas2() )                 
-
-      
-
-   </script>
-
+    let botao = document.getElementById("botaoCarregar")
+    botao.addEventListener("click", () => carregarCervejas2())
+  </script>
 </html>
