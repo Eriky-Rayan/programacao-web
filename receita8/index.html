@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Bebidas</title>
+    <title>Buscador de Telefones</title>
     <link rel="stylesheet" href="estilo.css">
   </head>
 
   <body>
-    <h1>🍹 Buscador de Bebidas</h1>
+    <h1>🍹 Buscador de Telefones</h1>
 
-    <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+    <div><button id="botaoCarregar">Carregando telefones...</button></div>
     <div id="cervejasDiv"></div>
   </body>
 
@@ -20,12 +20,12 @@
     // cs é um array de cervejas
     const carregarDiv = cs => {
       const div = document.getElementById("cervejasDiv")
-      const itensHtml = cs.map(({ title, price, category }) =>
-        `<div>${title} <span class="categoria">${category}</span> <span class="preco">R$${price}</span></div>`
+      const itensHtml = cs.map(({ id, title, price }) =>
+        `<div>${id} <span class="categoria">${title}</span> <span class="preco">R$${price}</span></div>`
       )
       div.innerHTML = `${itensHtml.join("\n")}`
     }
-    
+
     /*
     async function carregarCervejas() {
       try {
@@ -39,7 +39,7 @@
     }*/
 
     function carregarCervejas2() {
-      fetch("https://dummyjson.com/products/search?q=drinks").then(
+      fetch("https://dummyjson.com/products/search?q=phones").then(
         res => res.json()
       ).then(
         json => carregarDiv(json.products)
