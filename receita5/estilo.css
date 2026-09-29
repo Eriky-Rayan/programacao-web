@@ -81,3 +81,25 @@ body > div:first-child {
       .tabela-cervejas tr:nth-child(even) td {
          background-color: #f3e3c3;
       }
+
+#botaoOrdenar {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#botaoOrdenar:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+#botaoOrdenar:active {
+    transform: translateY(0);
+}

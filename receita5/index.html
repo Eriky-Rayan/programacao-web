@@ -10,6 +10,7 @@
       <table id="meu amor" class="tabela-cervejas">
          <tbody></tbody>
       </table>
+      <div><button id="botaoOrdenar">Ordenar</button></div>
    </body>
 
    <script>
@@ -21,8 +22,9 @@
          const cervejasHtml = cervs.map(item => `<tr><td>${item}</td></tr>`)
          tabela.innerHTML = cervejasHtml.join("\n")
       }
-
       let botao = document.getElementById("botaoCarregar")
       botao.addEventListener("click", () => carregarDiv(sorvetes))
+      let botao2 = document.getElementById("botaoOrdenar")
+      botao2.addEventListener("click", () => carregarDiv(sorvetes.sort()))
    </script>
 </html>
