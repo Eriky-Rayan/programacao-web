@@ -11,15 +11,16 @@
 
    <script>
       let cervejas = ["Guiness", "Desperados", "Becks"]
+      let sorvetes = ["Creme", "Morango", "Chocolate"]
 
       //function carregar(){
       const carregarDiv = (cervs) => {
          const div = document.getElementById("meu amor")
-         const cervejasHtml = cervs.map( item => `<h1>${item}</h1>` )
+         const cervejasHtml = cervs.map( item => `<div>${item}</div>` )
          div.innerHTML = `${cervejasHtml.join("\n")}`
       }
 
       let botao = document.getElementById("botaoCarregar")
-      botao.addEventListener("click", () => carregarDiv(cervejas))
+      botao.addEventListener("click", () => carregarDiv(sorvetes))
    </script>
 </html>
