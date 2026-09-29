@@ -7,7 +7,9 @@
 
    <body>
       <div><button id="botaoCarregar">Carregando cervejas...</button></div>
-      <div id="meu amor"></div>
+      <table id="meu amor" class="tabela-cervejas">
+         <tbody></tbody>
+      </table>
    </body>
 
    <script>
@@ -15,9 +17,9 @@
       let sorvetes = ["Creme", "Morango", "Chocolate"]
 
       const carregarDiv = (cervs) => {
-         const div = document.getElementById("meu amor")
-         const cervejasHtml = cervs.map( item => `<div>${item}</div>` )
-         div.innerHTML = `${cervejasHtml.join("\n")}`
+         const tabela = document.querySelector("#meu\\ amor tbody")
+         const cervejasHtml = cervs.map(item => `<tr><td>${item}</td></tr>`)
+         tabela.innerHTML = cervejasHtml.join("\n")
       }
 
       let botao = document.getElementById("botaoCarregar")

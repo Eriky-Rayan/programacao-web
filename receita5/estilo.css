@@ -67,3 +67,17 @@ body > div:first-child {
     transform: translateX(4px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
+
+.tabela-cervejas {
+         border-collapse: collapse;
+         margin-top: 12px;
+         min-width: 220px;
+      }
+      .tabela-cervejas td {
+         border: 1px solid #8a6d3b;
+         padding: 8px 12px;
+         background-color: #fff8e7;
+      }
+      .tabela-cervejas tr:nth-child(even) td {
+         background-color: #f3e3c3;
+      }
