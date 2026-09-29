@@ -1,0 +1,69 @@
+/* estilo.css */
+
+/* Estilização geral da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* Envoltório do botão */
+body > div:first-child {
+    margin-bottom: 24px;
+}
+
+/* Estilo do botão */
+#botaoCarregar {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#botaoCarregar:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+#botaoCarregar:active {
+    transform: translateY(0);
+}
+
+/* Contêiner principal onde as divs serão inseridas (seletor por atributo para IDs com espaço) */
+[id="meu amor"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Estilo individual para cada div de item inserida no script */
+[id="meu amor"] > div {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    border-left: 5px solid #ff9800;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[id="meu amor"] > div:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
