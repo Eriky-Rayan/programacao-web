@@ -5,12 +5,16 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 
 | Receita | Link |
 |---|---|
-| Receita 1 | [receita1](./receita1/app/) |
-| Receita 2 | [receita2](./receita2/app/) |
-| Receita 3 | [receita3](./receita3/app/) |
-| Receita 4 | [receita4](./receita4/app/) |
-| Receita 5 | [receita5](./receita5/app/) |
-| Receita 6 | [receita6](./receita6/app/) |
+| Receita 1 | [receita1](./receita1/) |
+| Receita 2 | [receita2](./receita2/) |
+| Receita 3 | [receita3](./receita3/) |
+| Receita 4 | [receita4](./receita4/) |
+| Receita 5 | [receita5](./receita5/) |
+| Receita 6 | [receita6](./receita6/) |
+| Receita 7 | [receita7](./receita7/) |
+| Receita 8 | [receita8](./receita8/) |
+
+**Links acima são somente para direcionar ao diretorio da receita.**
 
 ## 🚀 Como Executar o Projeto
 
@@ -18,10 +22,6 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 
 ### 📋 Passo a Passo
 
-1. **Acesse a receita desejada**
+1. **Acesse o menu (main.html) dando dois clicks**
 
-2. **Instale as dependências**
-```bash
-npm install
-
-```
+2. **Escolha a receita desejada e click no link**
