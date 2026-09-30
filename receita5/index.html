@@ -6,7 +6,7 @@
    </head>
 
    <body>
-      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+      <div><a href="#" id="botaoCarregar">Carregando cervejas...</a></div>
 
       <div>
          <table id="meu amor" class="tabela-cervejas">
@@ -16,8 +16,8 @@
 
       <br/>
       <div>
-         <button id="botaoOrdenar">Ordenar</button>
-         <button id="botaoEmbaralhar">Embaralhar</button>
+         <a href="#" id="botaoOrdenar">Ordenar</a>
+         <a href="#" id="botaoEmbaralhar">Embaralhar</a>
       </div>
    </body>
 
@@ -30,14 +30,24 @@
          const cervejasHtml = cervs.map(item => `<tr><td>${item}</td></tr>`)
          tabela.innerHTML = cervejasHtml.join("\n")
       }
+
       let botao = document.getElementById("botaoCarregar")
-      botao.addEventListener("click", () => carregarDiv(sorvetes))
+      botao.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes)
+      })
 
       let botaoOrd = document.getElementById("botaoOrdenar")
-      botaoOrd.addEventListener("click", () => carregarDiv(sorvetes.sort()))
+      botaoOrd.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes.sort())
+      })
 
       let botaoEmbara = document.getElementById("botaoEmbaralhar")
-      botaoEmbara.addEventListener("click", () => carregarDiv(sorvetes.sort(() => Math.random() - 0.5)))
+      botaoEmbara.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes.sort(() => Math.random() - 0.5))
+      })
       //metodo utilizado para embaralhar não é 100% aleatorio, mas serve.
    </script>
 </html>
