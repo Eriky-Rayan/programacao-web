@@ -7,6 +7,16 @@
    <body>
       <div><button id="botaoCarregar">Carregando cervejas...</button></div>
       <div id="cervejasDiv"></div>
+      <br/>
+      <table id="cervejasTabela" border="1" hidden>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cerveja</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
    </body>
 
    <script>
@@ -28,9 +38,15 @@
 
       //cs é um array de cervejas
       const carregarDiv = cs => {
-         const div = document.getElementById("cervejasDiv")
-         const itensHtml = cs.map( item => `<div>${item['name']} -- ${item['alcohol']}</div>` )
+          const div = document.getElementById("tableBody")
+          const itensHtml = cs.map(item => `
+            <tr>
+               <td>${item.name}</td>
+               <td>${item.alcohol}</td>
+            </tr>
+          `)
          div.innerHTML = `${itensHtml.join("\n")}`
+         document.getElementById("cervejasTabela").hidden = false
       }
 
       let botao = document.getElementById("botaoCarregar")
