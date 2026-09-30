@@ -103,3 +103,25 @@ body > div:first-child {
 #botaoOrdenar:active {
     transform: translateY(0);
 }
+
+#botaoEmbaralhar {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#botaoEmbaralhar:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+#botaoEmbaralhar:active {
+    transform: translateY(0);
+}

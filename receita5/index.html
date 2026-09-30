@@ -7,15 +7,23 @@
 
    <body>
       <div><button id="botaoCarregar">Carregando cervejas...</button></div>
-      <table id="meu amor" class="tabela-cervejas">
+
+      <div>
+         <table id="meu amor" class="tabela-cervejas">
          <tbody></tbody>
-      </table>
-      <div><button id="botaoOrdenar">Ordenar</button></div>
+         </table>
+      </div>
+
+      <br/>
+      <div>
+         <button id="botaoOrdenar">Ordenar</button>
+         <button id="botaoEmbaralhar">Embaralhar</button>
+      </div>
    </body>
 
    <script>
       let cervejas = ["Guiness", "Desperados", "Becks"]
-      let sorvetes = ["Creme", "Morango", "Chocolate"]
+      let sorvetes = ["Creme", "Morango", "Chocolate", "Menta", "Napolitano", "Tapioca"]
 
       const carregarDiv = (cervs) => {
          const tabela = document.querySelector("#meu\\ amor tbody")
@@ -24,7 +32,12 @@
       }
       let botao = document.getElementById("botaoCarregar")
       botao.addEventListener("click", () => carregarDiv(sorvetes))
-      let botao2 = document.getElementById("botaoOrdenar")
-      botao2.addEventListener("click", () => carregarDiv(sorvetes.sort()))
+
+      let botaoOrd = document.getElementById("botaoOrdenar")
+      botaoOrd.addEventListener("click", () => carregarDiv(sorvetes.sort()))
+
+      let botaoEmbara = document.getElementById("botaoEmbaralhar")
+      botaoEmbara.addEventListener("click", () => carregarDiv(sorvetes.sort(() => Math.random() - 0.5)))
+      //metodo utilizado para embaralhar não é 100% aleatorio, mas serve.
    </script>
 </html>
