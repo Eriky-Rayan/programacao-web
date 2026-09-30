@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="estilo.css">
+   </head>
+
+   <body>
+      <div><a href="#" id="botaoCarregar">Carregando cervejas...</a></div>
+
+      <div>
+         <table id="meu amor" class="tabela-cervejas">
+         <tbody></tbody>
+         </table>
+      </div>
+
+      <br/>
+      <div>
+         <a href="#" id="botaoOrdenar">Ordenar</a>
+         <a href="#" id="botaoEmbaralhar">Embaralhar</a>
+      </div>
+   </body>
+
+   <script>
+      let cervejas = ["Guiness", "Desperados", "Becks"]
+      let sorvetes = ["Creme", "Morango", "Chocolate", "Menta", "Napolitano", "Tapioca"]
+
+      const carregarDiv = (cervs) => {
+         const tabela = document.querySelector("#meu\\ amor tbody")
+         const cervejasHtml = cervs.map(item => `<tr><td>${item}</td></tr>`)
+         tabela.innerHTML = cervejasHtml.join("\n")
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+      botao.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes)
+      })
+
+      let botaoOrd = document.getElementById("botaoOrdenar")
+      botaoOrd.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes.sort())
+      })
+
+      let botaoEmbara = document.getElementById("botaoEmbaralhar")
+      botaoEmbara.addEventListener("click", (e) => {
+         e.preventDefault()
+         carregarDiv(sorvetes.sort(() => Math.random() - 0.5))
+      })
+      //metodo utilizado para embaralhar não é 100% aleatorio, mas serve.
+   </script>
+</html>
