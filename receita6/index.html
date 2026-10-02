@@ -46,8 +46,8 @@
       ]
 
       //cs é um array de cervejas
-      const carregarDiv = cs => {
-          const div = document.getElementById("tableBody")
+      const carregarDiv = (cs, id = "cervejasDiv") => {
+          const div = document.getElementById(id)
           const itensHtml = cs.map(item => `
             <tr>
                <td>${item.name}</td>
@@ -61,7 +61,7 @@
       }
 
       let botao = document.getElementById("botaoCarregar")
-      botao.addEventListener("click", () => carregarDiv(cervejas) )
+      botao.addEventListener("click", () => carregarDiv(cervejas, "tableBody"))
 
    </script>
 </html>
