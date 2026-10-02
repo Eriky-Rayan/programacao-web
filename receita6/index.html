@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="estilo.css">
+   </head>
+
+   <body>
+      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+      <div id="cervejasDiv"></div>
+      <br/>
+      <table id="cervejasTabela" hidden>
+        <thead>
+         <tr id="tableHeader"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+   </body>
+
+   <script>
+
+      let cervejas = [
+         {
+            name: "Guiness",
+            alcohol: "10%",
+            style: "Red Ale",
+            ibu: "15"
+         },
+         {
+            name: "Desperados",
+            alcohol: "6%",
+            style: "English IPA",  
+            ibu: "34"
+         },
+         {
+            name: "Becks",
+            alcohol: "5%",
+            style: "Cream Ale", 
+            ibu: "45"
+         }
+      ]
+
+      //cs é um array de cervejas
+        const carregarDiv = (
+         cs, 
+         id = "cervejasDiv", 
+         cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"],
+         props = ["name", "alcohol", "style", "ibu"]
+        ) => {
+          const div = document.getElementById(id)
+           const cabecalho = document.getElementById("tableHeader")
+           cabecalho.replaceChildren(...cabecalhos.map(nome => {
+             const th = document.createElement("th")
+             th.textContent = nome
+             return th
+           }))
+               const linhas = cs.map(item => {
+                  const tr = document.createElement("tr")
+                  props.forEach(prop => {
+                     const td = document.createElement("td")
+                     td.textContent = item[prop]
+                     tr.appendChild(td)
+                  })
+                  return tr
+               })
+             div.replaceChildren(...linhas)
+         document.getElementById("cervejasTabela").hidden = false
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+      botao.addEventListener("click", () => carregarDiv(cervejas, "tableBody"))
+
+   </script>
+</html>
