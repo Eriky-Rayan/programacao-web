@@ -14,6 +14,8 @@
             <tr>
                 <th>Nome</th>
                 <th>Álcool</th>
+                <th>Estilo</th>
+                <th>Ibu</th>
             </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -25,15 +27,21 @@
       let cervejas = [
          {
             name: "Guiness",
-            alcohol: "10%"
+            alcohol: "10%",
+            style: "Red Ale",
+            ibu: "15"
          },
          {
             name: "Desperados",
-            alcohol: "6%"
+            alcohol: "6%",
+            style: "English IPA",  
+            ibu: "34"
          },
          {
             name: "Becks",
-            alcohol: "5%"
+            alcohol: "5%",
+            style: "Cream Ale", 
+            ibu: "45"
          }
       ]
 
@@ -44,6 +52,8 @@
             <tr>
                <td>${item.name}</td>
                <td>${item.alcohol}</td>
+               <td>${item.style}</td>
+               <td>${item.ibu}</td>
             </tr>
           `)
          div.innerHTML = `${itensHtml.join("\n")}`
