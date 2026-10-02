@@ -11,12 +11,7 @@
       <br/>
       <table id="cervejasTabela" hidden>
         <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Álcool</th>
-                <th>Estilo</th>
-                <th>Ibu</th>
-            </tr>
+         <tr id="tableHeader"></tr>
         </thead>
         <tbody id="tableBody"></tbody>
       </table>
@@ -46,9 +41,16 @@
       ]
 
       //cs é um array de cervejas
-      const carregarDiv = (cs, id = "cervejasDiv") => {
+        const carregarDiv = (cs, id = "cervejasDiv", cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
           const div = document.getElementById(id)
+           const cabecalho = document.getElementById("tableHeader")
+           cabecalho.replaceChildren(...cabecalhos.map(nome => {
+             const th = document.createElement("th")
+             th.textContent = nome
+             return th
+           }))
           const itensHtml = cs.map(item => `
+          
             <tr>
                <td>${item.name}</td>
                <td>${item.alcohol}</td>
