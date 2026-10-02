@@ -41,7 +41,12 @@
       ]
 
       //cs é um array de cervejas
-        const carregarDiv = (cs, id = "cervejasDiv", cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
+        const carregarDiv = (
+         cs, 
+         id = "cervejasDiv", 
+         cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"],
+         props = ["name", "alcohol", "style", "ibu"]
+        ) => {
           const div = document.getElementById(id)
            const cabecalho = document.getElementById("tableHeader")
            cabecalho.replaceChildren(...cabecalhos.map(nome => {
@@ -49,16 +54,16 @@
              th.textContent = nome
              return th
            }))
-          const itensHtml = cs.map(item => `
-          
-            <tr>
-               <td>${item.name}</td>
-               <td>${item.alcohol}</td>
-               <td>${item.style}</td>
-               <td>${item.ibu}</td>
-            </tr>
-          `)
-         div.innerHTML = `${itensHtml.join("\n")}`
+               const linhas = cs.map(item => {
+                  const tr = document.createElement("tr")
+                  props.forEach(prop => {
+                     const td = document.createElement("td")
+                     td.textContent = item[prop]
+                     tr.appendChild(td)
+                  })
+                  return tr
+               })
+             div.replaceChildren(...linhas)
          document.getElementById("cervejasTabela").hidden = false
       }
 
