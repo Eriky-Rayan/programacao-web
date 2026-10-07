@@ -12,15 +12,37 @@
       <script>
         ReactDOM.render(
           React.createElement(
-            'h1',
-            { id: 'my-heading' },
+            'div',
+            null,
             React.createElement(
-              'span',
-              null,
-              'React ',
-              React.createElement('em', null, 'é muito'),
+              'h1',
+              { id: 'my-heading' },
+              React.createElement(
+                'span',
+                null,
+                'React ',
+                React.createElement('em', null, 'é muito')
+              ),
+              ' massa!'
             ),
-            ' massa!'
+            React.createElement(
+              'table',
+              { id: 'tabela', border: '1' },
+              React.createElement(
+                'tbody',
+                null,
+                React.createElement(
+                  'tr',
+                  null,
+                  React.createElement('td', null, 'Nome'),
+                  React.createElement('td', null, 'Salario')
+                ),
+                React.createElement('tr', null, 
+                  React.createElement('td', null, 'João'),
+                  React.createElement('td', null, '1.500')
+                )
+              )
+            )
           ),
           document.getElementById('app')
         );
