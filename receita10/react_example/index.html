@@ -10,6 +10,41 @@
       <script src="libs/babel.js"></script>
 
       <script type="text/babel">
+         const cervejasList = [
+            {
+               name: "51",
+               alcohol: "30%"
+            },
+            {
+               name: "Skol",
+               alcohol: "10%"
+            },
+            {
+               name: "Vinho",
+               alcohol: "3%"
+            }
+         ]
+
+         function TabelaBebidas2() {
+            return (
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Nome</th>
+                        <th>Álcool</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {cervejasList.map((cerv) => (
+                        <tr key={cerv.name}>
+                           <td>{cerv.name}</td>
+                           <td>{cerv.alcohol}</td>
+                        </tr>
+                     ))}
+                  </tbody>
+               </table>
+            )
+         }
 
          function Cabecalho() {
             return(
@@ -37,6 +72,19 @@
             </div>
             );
          }
+
+         function TabelaBotao() {
+            const lidarComClick = () => {
+               ReactDOM.render(
+                  <TabelaBebidas2/>,
+                  document.getElementById("tabela-bebidas")
+               )
+            }
+
+            return (
+               <button id="Botao" onClick={lidarComClick}>Gerar Tabela</button>
+            )
+         }
       </script>
       
 
@@ -44,7 +92,8 @@
          ReactDOM.render(
             <div>
                <Cabecalho/>
-               <TabelaBebidas/>
+               <TabelaBotao/>
+               <div id="tabela-bebidas"></div>
             </div>
             ,
             document.getElementById("app"))
