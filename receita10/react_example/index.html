@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>React Um</title>
+      <link rel="stylesheet" href="tabela.css">
+   </head>
+   <body>
+      <div id="app"></div>
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+      <script src="libs/babel.js"></script>
+
+      <script type="text/babel">
+         const cervejasList = [
+            {
+               name: "51",
+               alcohol: "30%"
+            },
+            {
+               name: "Skol",
+               alcohol: "10%"
+            },
+            {
+               name: "Vinho",
+               alcohol: "3%"
+            }
+         ]
+
+         function TabelaBebidas2() {
+            return (
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Nome</th>
+                        <th>Álcool</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {cervejasList.map((cerv) => (
+                        <tr key={cerv.name}>
+                           <td>{cerv.name}</td>
+                           <td>{cerv.alcohol}</td>
+                        </tr>
+                     ))}
+                  </tbody>
+               </table>
+            )
+         }
+
+         function Cabecalho() {
+            return(
+               <h1>Minha Tabela de Bebidas</h1>
+            )
+         }
+
+         function TabelaBebidas() {
+            return (
+               <div id="app">
+               <table id="tabela" border="1">
+                  <thead>
+                     <tr>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Havana</td>
+                        <td>Engenho Anísio Santiago</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            );
+         }
+
+         function TabelaBotao() {
+            const lidarComClick = () => {
+               ReactDOM.render(
+                  <TabelaBebidas2/>,
+                  document.getElementById("tabela-bebidas")
+               )
+            }
+
+            return (
+               <button id="Botao" onClick={lidarComClick}>Gerar Tabela</button>
+            )
+         }
+      </script>
+      
+
+      <script type="text/babel">
+         ReactDOM.render(
+            <div>
+               <Cabecalho/>
+               <TabelaBotao/>
+               <div id="tabela-bebidas"></div>
+            </div>
+            ,
+            document.getElementById("app"))
+      </script>
+   </body>
+</html>
