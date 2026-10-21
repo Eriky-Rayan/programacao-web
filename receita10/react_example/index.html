@@ -10,8 +10,9 @@
       <script src="libs/babel.js"></script>
 
       <script type="text/babel">
-         ReactDOM.render(
-            <div id="app">
+         function TabelaBebidas() {
+            return (
+               <div id="app">
                <table id="tabela" border="1">
                   <thead>
                      <tr>
@@ -26,9 +27,17 @@
                      </tr>
                   </tbody>
                </table>
-            </div>,
-            document.getElementById("app")
-         );
+            </div>
+            );
+         }
+      </script>
+      
+
+      <script type="text/babel">
+         ReactDOM.render(
+            <TabelaBebidas/>
+            ,
+            document.getElementById("app"))
       </script>
    </body>
 </html>
