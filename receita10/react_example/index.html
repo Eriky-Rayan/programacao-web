@@ -10,6 +10,13 @@
       <script src="libs/babel.js"></script>
 
       <script type="text/babel">
+
+         function Cabecalho() {
+            return(
+               <h1>Minha Tabela de Bebidas</h1>
+            )
+         }
+
          function TabelaBebidas() {
             return (
                <div id="app">
@@ -35,7 +42,10 @@
 
       <script type="text/babel">
          ReactDOM.render(
-            <TabelaBebidas/>
+            <div>
+               <Cabecalho/>
+               <TabelaBebidas/>
+            </div>
             ,
             document.getElementById("app"))
       </script>
