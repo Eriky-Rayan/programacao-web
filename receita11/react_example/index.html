@@ -14,6 +14,18 @@
 
       <script type="text/babel">
 
+         class ImagemPinga extends React.Component{
+            render(){
+               return (
+                  <img
+                     src="https://mambodelivery.vtexassets.com/arquivos/ids/159833/cachaca-51-965ml.jpg?v=637883136200030000"
+                     width="300"
+                     height="300"
+                  />
+               )
+            }
+         }
+
          class TabelaBebidas extends React.Component{
 
             render(){
@@ -51,7 +63,10 @@
          }
 
          ReactDOM.render(
-            <TabelaBebidas/>
+            <div>
+               <TabelaBebidas/>
+               <ImagemPinga/>
+            </div>
             ,
             document.getElementById("app"))
 
