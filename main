@@ -89,6 +89,22 @@ th {
         <td> 8 </td>
         <td> <a href="./receita8/index.html" target="_blank">Receita8</a> </td>
       </tr>
+      <tr>
+        <td> 9 </td>
+        <td> <a href="./receita9/react_example/index.html" target="_blank">Receita9</a> </td>
+      </tr>
+      <tr>
+        <td> 10 </td>
+        <td> <a href="./receita10/react_example/index.html" target="_blank">Receita10</a> </td>
+      </tr>
+      <tr>
+        <td> 11 </td>
+        <td> <a href="./receita11/react_example/index.html" target="_blank">Receita11</a> </td>
+      </tr>
+      <tr>
+        <td> 12 </td>
+        <td> <a href="./receita12/react_example/index.html" target="_blank">Receita12</a> </td>
+      </tr>
     </table>
   </div>
 </div>
