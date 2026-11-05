@@ -13,10 +13,10 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 | Receita 6 | [receita6](./receita6/) |
 | Receita 7 | [receita7](./receita7/) |
 | Receita 8 | [receita8](./receita8/) |
-| Receita 9 | [receita9](./receita9/) |
-| Receita 10 | [receita10](./receita10/) |
-| Receita 11 | [receita11](./receita11/) |
-| Receita 12 | [receita12](./receita12/) |
+| Receita 9 | [receita9](./receita9/react_example) |
+| Receita 10 | [receita10](./receita10/react_example) |
+| Receita 11 | [receita11](./receita11/react_example) |
+| Receita 12 | [receita12](./receita12/react_example) |
 
 **Links acima são somente para direcionar ao diretorio da receita.**
 
