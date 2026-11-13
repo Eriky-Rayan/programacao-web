@@ -17,6 +17,9 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 | Receita 10 | [receita10](./receita10/react_example) |
 | Receita 11 | [receita11](./receita11/react_example) |
 | Receita 12 | [receita12](./receita12/react_example) |
+| Receita 13 | [receita13](./receita13/next_example) |
+| Receita 14 | [receita14](./receita14/next_example) |
+| Receita 15 | [receita15](./receita15/next_example) |
 
 **Links acima são somente para direcionar ao diretorio da receita.**
 
@@ -24,8 +27,16 @@ Repositorio destinado à materia de Programação Web (DCT1109) ministrada pelo 
 
 ---
 
-### 📋 Passo a Passo
+### 📋 Passo a Passo (Receitas 1 ~ 8)
 
 1. **Acesse o menu (main.html) dando dois clicks**
 
 2. **Escolha a receita desejada e click no link**
+
+### 📋 Passo a Passo (Receitas >= 9)
+
+1. **Entre dentro da pasta ..._example da receita**
+
+2. **Utilize o comando "npm install"**
+
+3. **Utilize o comando "npm run dev"**
