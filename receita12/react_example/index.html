@@ -22,7 +22,7 @@
 
 
       <script type="text/babel">
-         const TabelaBebidas = ({ titulo, cabecalhos }) => {
+         const TabelaBebidas = ({ titulo, cabecalhos, conteudo }) => {
             return (
                <div>
                   <h1>{titulo}</h1>
@@ -34,17 +34,32 @@
                            ))}
                         </tr>
                      </thead>
+                     <tbody>
+                        {conteudo.map((linha, indexLinha) => (
+                           <tr key={indexLinha}>
+                              {(Array.isArray(linha) ? linha : Object.values(linha)).map((celula, indexColuna) => (
+                                 <td key={indexColuna}>{celula}</td>
+                              ))}
+                           </tr>
+                        ))}
+                     </tbody>
                   </table>
                </div>
             );
          };
 
          const valoresCabecalhos = ["Nome", "Marca"];
+         const dadosTabela = [
+            ["Havana", "Engenho Anísio Santiago"],
+            ["Ypióca", "Ypióca Agroindustrial"],
+            ["51", "Cia. Müller de Bebidas"]
+         ];
 
          ReactDOM.render(
             <TabelaBebidas
                titulo="minha tabela de cana"
                cabecalhos={valoresCabecalhos}
+               conteudo={dadosTabela}
             />,
             document.getElementById("app")
          );
