@@ -10,3 +10,11 @@ export default function Home(){
         </div>
     )
 }
+
+export function Cabecalho({ subtitulo = "Cabeçalho exportado do app/page.js" }){
+    return (
+        <div>
+            <h2>{subtitulo}</h2>
+        </div>
+    )
+}
