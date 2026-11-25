@@ -1,6 +1,7 @@
 "use client"
 
 import Form from "next/form"
+import Link from "next/link"
 import {useState} from "react"
 
 export default function Home(){
@@ -36,7 +37,11 @@ export function MovieTable({movies}){
     return (
         <div>
             <div>
-                {movies.map( (m) => <div key={m.imdbID}>{m.Title} --- {m.Year}</div>  )}
+                {movies.map( (m) => (
+                    <div key={m.imdbID}>
+                        <Link href={`/movie/${m.imdbID}`}>{m.Title} --- {m.Year}</Link>
+                    </div>
+                ))}
             </div>
         </div>
     )
