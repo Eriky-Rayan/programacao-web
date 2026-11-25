@@ -10,3 +10,19 @@ export default function Home(){
         </div>
     )
 }
+
+export function Cabecalho(){
+    return (
+        <div>
+            <h2>Cabeçalho compartilhado do app/page.js</h2>
+        </div>
+    )
+}
+
+export function MensagemRota({ texto }){
+    return (
+        <div>
+            <p>{texto}</p>
+        </div>
+    )
+}
