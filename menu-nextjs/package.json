@@ -1,0 +1,24 @@
+{
+  "name": "menu-nextjs",
+  "version": "1.0.0",
+  "description": "Menu unificado em Next.js integrando as Receitas 13 a 21 de Programação Web (DCT1109)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "nextjs",
+    "pweb",
+    "receitas"
+  ],
+  "author": "Eriky Rayan",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "next": "^16.4.6",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5"
+  }
+}
