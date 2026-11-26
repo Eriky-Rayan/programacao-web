@@ -25,6 +25,8 @@ export function MovieForm({actionHandler}){
         <Form action={actionHandler}>
             <label htmlFor="idTitleSearchKey">Título</label>
             <input id="idTitleSearchKey" name="titleSearchKey"/>
+            <label htmlFor="idYear">Ano</label>
+            <input id="idYear" name="year"/>
             <button type="submit">Pesquisar</button>
         </Form>
     )
