@@ -1,0 +1,72 @@
+[
+  {
+    "id": "game-01",
+    "Title": "The Witcher 3: Wild Hunt",
+    "Year": "2015",
+    "Genre": "RPG",
+    "Platform": "PC, PS4, Xbox One, Switch"
+  },
+  {
+    "id": "game-02",
+    "Title": "Red Dead Redemption 2",
+    "Year": "2018",
+    "Genre": "Ação e Aventura",
+    "Platform": "PC, PS4, Xbox One"
+  },
+  {
+    "id": "game-03",
+    "Title": "Elden Ring",
+    "Year": "2022",
+    "Genre": "Action RPG",
+    "Platform": "PC, PS5, Xbox Series X/S"
+  },
+  {
+    "id": "game-04",
+    "Title": "The Legend of Zelda: Breath of the Wild",
+    "Year": "2017",
+    "Genre": "Ação e Aventura",
+    "Platform": "Nintendo Switch"
+  },
+  {
+    "id": "game-05",
+    "Title": "God of War Ragnarök",
+    "Year": "2022",
+    "Genre": "Ação e Aventura",
+    "Platform": "PS4, PS5, PC"
+  },
+  {
+    "id": "game-06",
+    "Title": "Hollow Knight",
+    "Year": "2017",
+    "Genre": "Metroidvania",
+    "Platform": "PC, Switch, PS4, Xbox One"
+  },
+  {
+    "id": "game-07",
+    "Title": "Cyberpunk 2077",
+    "Year": "2020",
+    "Genre": "RPG",
+    "Platform": "PC, PS5, Xbox Series X/S"
+  },
+  {
+    "id": "game-08",
+    "Title": "Baldur's Gate 3",
+    "Year": "2023",
+    "Genre": "RPG",
+    "Platform": "PC, PS5, Xbox Series X/S"
+  },
+  {
+    "id": "game-09",
+    "Title": "Grand Theft Auto V",
+    "Year": "2013",
+    "Genre": "Ação e Aventura",
+    "Platform": "PC, PS4, PS5, Xbox"
+  },
+  {
+    "id": "game-10",
+    "Title": "Minecraft",
+    "Year": "2011",
+    "Genre": "Sandbox / Sobrevivência",
+    "Platform": "Multiplataforma"
+  }
+]
